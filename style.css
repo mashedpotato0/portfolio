@@ -1,9 +1,6 @@
-/* ================================================
-   PORTFOLIO – style.css
-   Faziluddin Mohammad
-   ================================================ */
+/* main styles for the portfolio */
 
-/* ===== RESET ===== */
+/* base reset */
 *,
 *::before,
 *::after {
@@ -12,7 +9,7 @@
   padding: 0;
 }
 
-/* ===== CUSTOM PROPERTIES ===== */
+/* color and variable definitions */
 :root {
   --bg: #08090d;
   --bg2: #0d0f15;
@@ -59,7 +56,7 @@ button {
   border: none;
 }
 
-/* ===== SCROLLBAR ===== */
+/* scrollbar aesthetics */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -77,9 +74,7 @@ button {
   background: var(--muted);
 }
 
-/* =============================================
-   BOOT SCREEN
-   ============================================= */
+/* terminal boot sequence UI */
 #boot-screen {
   position: fixed;
   inset: 0;
@@ -233,9 +228,7 @@ button {
   }
 }
 
-/* =============================================
-   CURSOR GLOW
-   ============================================= */
+/* mouse follow effect */
 .cursor-glow {
   position: fixed;
   width: 360px;
@@ -248,9 +241,7 @@ button {
   transform: translate(-50%, -50%);
 }
 
-/* =============================================
-   CANVAS PARTICLES (hero bg)
-   ============================================= */
+/* background visuals */
 #hero-canvas {
   position: absolute;
   inset: 0;
@@ -258,9 +249,7 @@ button {
   pointer-events: none;
 }
 
-/* =============================================
-   NAV
-   ============================================= */
+/* navigation styling */
 nav {
   position: fixed;
   top: 0;
@@ -350,9 +339,7 @@ nav.scrolled {
   box-shadow: 0 0 14px rgba(88, 166, 255, 0.15);
 }
 
-/* =============================================
-   HERO
-   ============================================= */
+/* landing section layout */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -574,9 +561,7 @@ nav.scrolled {
   }
 }
 
-/* =============================================
-   SECTION COMMON
-   ============================================= */
+/* global section rules */
 section {
   padding: 6rem 2rem;
 }
