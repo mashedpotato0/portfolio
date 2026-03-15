@@ -5,10 +5,10 @@
 // boot sequence lines
 const BOOT_LINES = [
   { text: 'BIOS v2.4.1 – Faziluddin Systems Inc.', cls: 'dim', delay: 0 },
-  { text: 'Checking memory ... 8192MB OK', cls: 'ok', delay: 80 },
+  { text: 'Checking memory ... {MEM} OK', cls: 'ok', delay: 80 },
   { text: 'Loading kernel image ... /boot/vmlinuz-6.7.0-fazi', cls: 'dim', delay: 160 },
-  { text: '[    0.000000] Booting Linux kernel 6.7.0-fazi #1 SMP PREEMPT', cls: 'dim', delay: 280 },
-  { text: '[    0.012341] CPU: 12-core Intel i7 @ 2.80GHz', cls: 'dim', delay: 360 },
+  { text: '[    0.000000] Booting {OS} kernel 6.7.0-fazi #1 SMP PREEMPT', cls: 'dim', delay: 280 },
+  { text: '[    0.012341] CPU: {CPU} cores @ 2.80GHz', cls: 'dim', delay: 360 },
   { text: '[    0.023100] PCI: Probing PCI hardware', cls: 'dim', delay: 440 },
   { text: '[    0.041200] ACPI: Power Button [PWRF]', cls: 'dim', delay: 510 },
   { text: '[    0.119800] NET: Registered PF_INET protocol family', cls: 'dim', delay: 570 },
@@ -34,17 +34,39 @@ const BOOT_LINES = [
   { text: '[    0.940000] Launching portfolio ...', cls: 'bright', delay: 2040 },
 ];
 
+function getDeviceInfo() {
+  const info = {
+    os: 'Linux',
+    cpu: navigator.hardwareConcurrency || 8,
+    mem: (navigator.deviceMemory || 8) + 'GB'
+  };
+
+  const ua = navigator.userAgent.toLowerCase();
+  if (ua.includes('win')) info.os = 'Windows';
+  else if (ua.includes('mac')) info.os = 'macOS';
+  else if (ua.includes('android')) info.os = 'Android';
+  else if (ua.includes('iphone') || ua.includes('ipad')) info.os = 'iOS';
+
+  return info;
+}
+
 function runBootScreen() {
   const screen = document.getElementById('boot-screen');
   if (!screen) return;
 
+  const device = getDeviceInfo();
   const container = document.getElementById('boot-lines');
   let baseDelay = 300; // offset after DOM ready
 
   BOOT_LINES.forEach((line, i) => {
+    let text = line.text
+      .replace('{OS}', device.os)
+      .replace('{CPU}', device.cpu)
+      .replace('{MEM}', device.mem);
+
     const el = document.createElement('div');
     el.className = 'boot-line';
-    el.innerHTML = `<span class="${line.cls}">${line.text}</span>`;
+    el.innerHTML = `<span class="${line.cls}">${text}</span>`;
     container.appendChild(el);
 
     setTimeout(() => {
