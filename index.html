@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faziluddin Mohammad – Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Faziluddin Mohammad, ECE student at VNIT Nagpur. Projects in C, C++, Python, JavaScript, OpenGL and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Faziluddin Mohammad – Portfolio" />
+    <meta property="og:description"
+        content="I build things from scratch: compilers, browsers, games, visualizations. From bare-metal C to full-stack apps." />
+    <meta property="og:image" content="assets/graphing-calculator-cpp/derivative_demo.png" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ======= BOOT SCREEN ======= -->
+    <div id="boot-screen" aria-hidden="true">
+        <div class="boot-header">
+            fazi-portfolio v1.0.0 &nbsp;<span class="boot-skip-hint">— press any key to skip</span>
+        </div>
+        <div class="boot-lines" id="boot-lines"></div>
+        <div class="boot-prompt" id="boot-prompt" style="opacity:0">
+            root@fazi-dev:~$ <span class="boot-cursor"></span>
+        </div>
+    </div>
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ======= NAV ======= -->
+    <nav id="navbar">
+        <div class="nav-logo">fazi<span>.</span>dev</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#magnum-opus">Magnum Opus</a>
+            <a href="#current">Featured</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="https://github.com/mashedpotato0" target="_blank" class="nav-gh">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            GitHub
+        </a>
+    </nav>
+
+    <!-- ======= HERO ======= -->
+    <section id="hero">
+        <div class="hero-grid"></div>
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badges-row">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    ECE Student @ VNIT Nagpur
+                </div>
+                <div class="available-badge">
+                    <span class="pulse-dot"></span>
+                    Available for Interviews
+                </div>
+            </div>
+            <h1 class="hero-name">
+                Faziluddin<br>Mohammad
+            </h1>
+            <p class="hero-sub">
+                I build things from scratch: compilers, browsers, games, visualizations. From bare-metal C to full-stack
+                apps.
+            </p>
+            <div class="hero-cta">
+                <a href="#magnum-opus" class="btn-primary">See My Best Work</a>
+                <a href="https://github.com/mashedpotato0" target="_blank" class="btn-outline">GitHub Profile ↗</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num" id="stat-repos">27</div>
+                    <div class="stat-label">Repositories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">7+</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">3+</div>
+                    <div class="stat-label">Years Coding</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">∞</div>
+                    <div class="stat-label">curiocity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= ABOUT ======= -->
+    <section id="about">
+        <div class="section-inner about-grid reveal">
+            <div class="about-text">
+                <div class="section-label">// about me</div>
+                <div class="divider"></div>
+                <h2 class="section-title">The Person Behind The Code</h2>
+                <p>Hello, I'm Faziluddin, an ECE student at VNIT Nagpur. I try to spend a significant part of my free
+                    time writing code for no particular reason. This has somehow led me to programs as varied as a web
+                    browser implemented using C, a fractal program, or a blood donation program.</p>
+                <p>I'm more into low-level programming, but I'm willing to learn any language if it makes more sense to
+                    a particular problem. Most of my projects are a result of me trying to learn something new and
+                    taking it as far as I can.</p>
+                <p>Currently, I'm into graphics programming using OpenGL. I'm slowly learning how to use it without
+                    breaking it.</p>
+            </div>
+            <div class="about-highlights stagger-children">
+                <div class="highlight-card">
+                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                    <div class="highlight-info">
+                        <h4>VNIT Nagpur</h4>
+                        <p>Electronics &amp; Communication Engineering</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="14" x="2" y="3" rx="2" />
+                        <line x1="8" x2="16" y1="21" y2="21" />
+                        <line x1="12" x2="12" y1="17" y2="21" />
+                    </svg>
+                    <div class="highlight-info">
+                        <h4>Systems &amp; Low-Level</h4>
+                        <p>C, C++, OpenGL, Embedded</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" x2="22" y1="12" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                    <div class="highlight-info">
+                        <h4>Web &amp; Mobile</h4>
+                        <p>JavaScript, Dart/Flutter, HTML</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" />
+                    </svg>
+                    <div class="highlight-info">
+                        <h4>AI / Data Science</h4>
+                        <p>Python, MATLAB, Deep Learning</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m11 9 3 3-3 3" />
+                        <path d="m22 22-1-1" />
+                        <path d="M11 22a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                        <path d="m21 2-9 9" />
+                        <path d="M21 7V2h-5" />
+                    </svg>
+                    <div class="highlight-info">
+                        <h4>Graphics &amp; Visualization</h4>
+                        <p>OpenGL, Processing, Python</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= SKILLS ======= -->
+    <section id="skills">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-label">// tech stack</div>
+                <div class="divider"></div>
+                <h2 class="section-title">Skills &amp; Technologies</h2>
+                <p class="section-desc">Things I actually know and use, not just things I've heard of.</p>
+            </div>
+            <div class="skills-grid stagger-children" id="skills-grid"></div>
+        </div>
+    </section>
+
+    <!-- ======= MAGNUM OPUS ======= -->
+    <section id="magnum-opus">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-label">// magnum opus</div>
+                <div class="divider"></div>
+                <h2 class="section-title">graphing-calculator-cpp</h2>
+                <p class="section-desc">The project I have spent the most thought and effort into. A complete graphing
+                    engine implemented in C++ without any external libraries, just pure math.</p>
+            </div>
+            <div class="opus-grid reveal">
+                <!-- Preview window -->
+                <div class="opus-preview">
+                    <div class="opus-window-bar">
+                        <span class="opus-dot red"></span>
+                        <span class="opus-dot yellow"></span>
+                        <span class="opus-dot green"></span>
+                        <span class="opus-window-title">graphing-calculator-cpp — OpenGL</span>
+                    </div>
+                    <div class="opus-canvas-area" id="opus-canvas-area">
+                        <!-- Real demo media tabs -->
+                        <div class="opus-demo-tabs">
+                            <button class="opus-tab active" data-target="opus-gif"
+                                onclick="opusTab(this,'opus-gif')">Polar Plot</button>
+                            <button class="opus-tab" data-target="opus-png"
+                                onclick="opusTab(this,'opus-png')">Derivatives</button>
+                        </div>
+                        <div class="opus-demo-panel" id="opus-gif">
+                            <img src="assets/graphing-calculator-cpp/polar_demo.gif" alt="Polar plot demo"
+                                class="opus-demo-img" />
+                        </div>
+                        <div class="opus-demo-panel" id="opus-png" style="display:none">
+                            <img src="assets/graphing-calculator-cpp/derivative_demo.png" alt="Derivative demo"
+                                class="opus-demo-img" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="opus-info">
+                    <div class="opus-tag-row">
+                        <span class="opus-tag">C++17</span>
+                        <span class="opus-tag">OpenGL</span>
+                        <span class="opus-tag">Implicit Curves</span>
+                        <span class="opus-tag">Polar Plots</span>
+                        <span class="opus-tag">Derivatives</span>
+                        <span class="opus-tag">Quadtree</span>
+                        <span class="opus-tag">Symbolic Math</span>
+                    </div>
+
+                    <div class="opus-stats">
+                        <div class="opus-stat">
+                            <div class="opus-stat-num">4+</div>
+                            <div class="opus-stat-label">Plot Types</div>
+                        </div>
+                        <div class="opus-stat">
+                            <div class="opus-stat-num">10^-12</div>
+                            <div class="opus-stat-label">Zoom Range</div>
+                        </div>
+                        <div class="opus-stat">
+                            <div class="opus-stat-num">60fps</div>
+                            <div class="opus-stat-label">Real-time</div>
+                        </div>
+                    </div>
+
+                    <p class="opus-desc">
+                        It began as a simple function plotting program and evolved into something I can really be proud
+                        of. It supports plotting of implicit equations such as x²+y²=r², polar plots, symbolic
+                        derivatives, and has a quadtree-based rendering system for accurate rendering of curves,
+                        including near singularities and cusps. All the rendering pipeline elements were implemented
+                        from scratch without any external math libraries.
+                    </p>
+
+                    <div class="opus-cta">
+                        <a href="https://github.com/mashedpotato0/graphing-calculator-cpp" target="_blank"
+                            class="btn-primary">
+                            View on GitHub
+                        </a>
+                        <a href="https://github.com/mashedpotato0/graphing-calculator-cpp" target="_blank"
+                            class="btn-accent">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FEATURED ======= -->
+    <section id="current">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-label">// current work</div>
+                <div class="divider"></div>
+                <h2 class="section-title">Stuff I'm Actually Proud Of</h2>
+                <p class="section-desc">These are the ones that took real effort or turned out better than expected.</p>
+            </div>
+            <div class="featured-grid stagger-children" id="featured-grid"></div>
+        </div>
+    </section>
+
+    <!-- ======= ALL PROJECTS ======= -->
+    <section id="projects">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-label">// all projects</div>
+                <div class="divider"></div>
+                <h2 class="section-title">All GitHub Repositories</h2>
+                <p class="section-desc">Everything public — the polished stuff, the experiments, and the half-finished
+                    ideas. Filter by language.</p>
+            </div>
+            <div class="filter-bar reveal" id="filter-bar"></div>
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- ======= CONTACT ======= -->
+    <section id="contact">
+        <div class="section-inner">
+            <div class="contact-inner reveal">
+                <div class="section-label">// get in touch</div>
+                <div class="divider" style="margin: 0 auto 0.85rem;"></div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-desc">
+                    If you'd like to work on something together, or just chat about code, I'd love to hear from you. I'm
+                    also currently looking for job interviews and internships.
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com/mashedpotato0" target="_blank" class="contact-card">
+                        <svg class="contact-card-icon" viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        <div class="contact-card-info">
+                            <h4>GitHub</h4>
+                            <p>mashedpotato0</p>
+                        </div>
+                    </a>
+                    <a href="mailto:fazilmd069@gmail.com" class="contact-card">
+                        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                        <div class="contact-card-info">
+                            <h4>Email</h4>
+                            <p>fazilmd069@gmail.com</p>
+                        </div>
+                    </a>
+                    <div class="contact-card">
+                        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <div class="contact-card-info">
+                            <h4>Location</h4>
+                            <p>Nagpur, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Made by <a href="https://github.com/mashedpotato0" target="_blank">Faziluddin Mohammad</a> · 2026
+    </footer>
+
+    <script src="main.js"></script>
+    <!-- Skip boot screen on any key -->
+    <script>
+        document.addEventListener('keydown', () => {
+            const s = document.getElementById('boot-screen');
+            if (s && !s.classList.contains('done')) {
+                s.classList.add('done');
+                setTimeout(() => { s.style.display = 'none'; document.body.style.overflow = ''; }, 900);
+            }
+        }, { once: true });
+        document.getElementById('boot-screen')?.addEventListener('click', () => {
+            const s = document.getElementById('boot-screen');
+            if (s && !s.classList.contains('done')) {
+                s.classList.add('done');
+                setTimeout(() => { s.style.display = 'none'; document.body.style.overflow = ''; }, 900);
+            }
+        });
+    </script>
+</body>
+
+</html>
